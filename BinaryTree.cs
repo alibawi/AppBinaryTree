@@ -130,20 +130,26 @@ namespace AppBinaryTree
 
         public void InOrderTraversal()
         {
+            string content = string.Empty;
             if (Root == null) throw new Exception("Binary tree is empty");
-            Root.InOrderTraversal();
+            Root.InOrderTraversal(ref content);
+            Console.WriteLine(content);
         }
 
         public void PreOrderTraversal()
         {
+            string content = string.Empty;
             if (Root == null) throw new Exception("Binary tree is empty");
-            Root.PreOrderTraversal();
+            Root.PreOrderTraversal(ref content);
+            Console.WriteLine(content);
         }
 
         public void PostorderTraversal()
         {
+            string content = string.Empty;
             if (Root == null) throw new Exception("Binary tree is empty");
-            Root.PostorderTraversal();
+            Root.PostorderTraversal(ref content);
+            Console.WriteLine(content);
         }
     }
 }

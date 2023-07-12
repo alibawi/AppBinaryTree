@@ -253,48 +253,44 @@
         }
 
         //Left->Root->Right Nodes recursively of each subtree 
-        public void InOrderTraversal()
+        public void InOrderTraversal(ref string content)
         {
             //first go to left child its children will be null so we print its data
-            if (Left != null)
-                Left.InOrderTraversal();
+            Left?.InOrderTraversal(ref content);
             //Then we print the root node 
-            Console.Write($" ({Key}) ");
-            //Content += (Content.Length > 0 ? " ==> " : "") + $"({Key})";
+            //Console.Write($" ({Key}) ");
+            content += (content.Length > 0 ? " => " : "") + Key.ToString();
             //Then we go to the right node which will print itself as both its children are null
-            if (Right != null)
-                Right.InOrderTraversal();
+            Right?.InOrderTraversal(ref content);
+
         }
 
 
         //Root->Left->Right Nodes recursively of each subtree 
-        public void PreOrderTraversal()
+        public void PreOrderTraversal(ref string content)
         {
             //First we print the root node 
-            Console.Write($" ({Key}) ");
-
+            //Console.Write($" ({Key}) ");
+            content += (content.Length > 0 ? " => " : "") + Key.ToString();
             //Then go to left child its children will be null so we print its data
-            if (Left != null)
-                Left.PreOrderTraversal();
+            Left?.PreOrderTraversal(ref content);
 
             //Then we go to the right node which will print itself as both its children are null
-            if (Right != null)
-                Right.PreOrderTraversal();
+            Right?.PreOrderTraversal(ref content);
         }
 
         //Left->Right->Root Nodes recursively of each subtree 
-        public void PostorderTraversal()
+        public void PostorderTraversal(ref string content)
         {
             //First go to left child its children will be null so we print its data
-            if (Left != null)
-                Left.PostorderTraversal();
+            Left?.PostorderTraversal(ref content);
 
             //Then we go to the right node which will print itself as both its children are null
-            if (Right != null)
-                Right.PostorderTraversal();
+            Right?.PostorderTraversal(ref content);
 
             //Then we print the root node 
-            Console.Write($" ({Key}) ");
+            //Console.Write($" ({Key}) ");
+            content += (content.Length > 0 ? " => " : "") + Key.ToString();
         }
 
         /// <summary>
